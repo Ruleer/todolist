@@ -1,0 +1,185 @@
+
+.head{
+    position: relative;
+    left: 25px;
+    top: 25px;
+    width: 300px;
+    color: #b83dba;
+}
+.head-name{
+    font-size: 50px;
+    width:500px;
+    margin: 10px;
+}
+
+#description{
+    position: absolute;
+    left: 290px;
+    top:70px;
+    color: #d682b6;
+}
+
+#todo-name{
+    position: absolute;
+    top: 125px;
+    left: 10%;
+    font-size: 30px;
+    background-color: #fdc7d8;
+    height: 40px;
+    width: 90px;
+    color: #22c813;
+}
+
+#t1{
+    margin: 0%;
+    position: relative;
+    left: 4px;
+    color: #b83dba;
+}
+
+#done-name{
+    position: absolute;
+    float: left;
+    left: 55%;
+    top: 125px;
+    font-size: 30px;
+    background-color: #fdc7d8;
+    height: 40px;
+    width: 90px;
+    color: #c71414;
+}
+
+.todo{
+    position: absolute;
+    width: 35%;
+    height: auto;
+    outline-color: #d682b6;
+    outline-style: solid;
+    outline-width: 5px;
+    left: 10%;
+    top: 170px;
+    margin: 6px;
+    z-index: 1;
+    background-color: #fdc7d8;
+}
+
+#btn1{
+    background-color: #d682b6;
+    position: relative;
+    left: 30px;
+    top: 10px;
+    border:none;
+    display: inline-block;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    cursor: pointer;
+}
+
+#btn1:focus{
+    outline: none;
+}
+
+#thing1{
+    position: relative;
+    left: 26px;
+    top: 10px;
+    width: 60%;
+    padding-left: 5px;
+}
+
+#thing1:focus{
+    outline: none;
+}
+
+
+.every{
+    color: #b83dba;
+    cursor: pointer;
+    font-weight: 700;
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s;
+}
+
+
+.every:hover{
+    text-decoration: underline;
+    color: #22c813;
+
+}
+
+#doThing{
+    position: absolute;
+    width: auto;
+    display: inline-block;
+}
+
+#chg{
+    position: relative;
+    cursor: pointer;
+    float: right;
+}
+
+.done{
+    float: left;
+    position: absolute;
+    width: 35%;
+    height: auto;
+    outline-color: black;
+    outline-style: solid;
+    outline-width: 5px;
+    left: 55%;
+    top: 170px;
+    z-index: 2;
+    margin: 6px;
+    background-color: #fdc7d8;
+    outline-color: #d682b6;
+}
+
+#every{
+    width: 350px;
+    word-wrap: break-word; 
+    word-break: normal; 
+}
+
+#list1{
+    width: 430px;
+}
+
+#del{
+    position: absolute;
+    display: inline-block;
+    margin-left: 100px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.every0{
+    text-decoration: underline;
+    font-weight: 700;
+    color: #b83dba;
+    cursor: default;
+}
+
+#list2{
+    color: #b83dba;
+    word-wrap: break-word; 
+    word-break: normal; 
+}
+
+.either{
+    text-decoration: underline;
+    font-weight: 700;
+    width: 350px;
+}
+
+#either{
+    width: 350px;
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s;
+}
+
+#either:hover{
+    text-decoration: underline;
+    color: #c71414;
+}

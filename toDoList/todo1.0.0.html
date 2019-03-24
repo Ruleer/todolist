@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/css/todocss.css" rel="stylesheet">
+    <link href="/css/normalize.css" rel="stylesheet">
+    <script src="/js/jquery-1.12.4.js"></script>
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="head">
+        <h1 class="head-name">Todo List</h1>
+    </div>
+    <!--
+    改为第一次打开时弹窗    
+    <span id="description">在Todo输入需要做的工作，完成则单击文字将其移入Done；点击小黄点，修改对应项任务；点击小红点，移除这项任务.</span>
+    -->
+    <div id="todo-name">
+        <h4 id="t1">ToDo</h4>
+    </div>
+    <div id="done-name">
+        <h4 id="t1">Done</h4>
+    </div> 
+    <div class="todo">
+        <input id="thing1" type="text" placeholder="我要">
+        <button id="btn1">ADD</button>
+        <ul id="list1">
+            <span class="every0">请添加你的todo事项</span>
+        </ul>
+    </div>
+    <div class="done">
+        <ul id="list2">
+            <span class = "either">这里是你已经完成的事项</span>
+        </ul>
+    </div>
+    <script>
+        var btn1 = $("#btn1");
+
+        //将todo中的事项移到右边并删除
+        var wordClick = function(data){
+            var before = $(data.target);
+            var del = before.parentsUntil("ul");
+            //console.log(before.text());
+            //before.removeChild(del);
+            createRight(before.text());
+            //var old = data.path[0];
+            del.remove();
+        }
+
+        //在done中创建事项
+        var createRight = function(text){
+            //添加文字等
+            var addList = $("#list2");
+            var li = $("<li></li>").addClass("either").attr("id","either");
+            var input = $("<span></span>").text(text);
+            addList.append(li);
+            li.append(input);
+            //添加点图片
+            var dot = $("<div></div>").attr("id","del");
+            var img = $("<img>").attr("src","/img/deletebutton.png").attr("width","15px").attr("height","15px");
+            dot.append(img);
+            li.append(dot);
+            //删除
+            dot.click(deleteText);
+        }
+
+        //删除done
+        var deleteText = function(data){
+            var old = $(data.target).parentsUntil("ul");
+            //console.log(old);
+            old.remove();
+        }
+
+        //点击黄点时弹出窗口修改
+        var chg = function(data){
+            //console.log(data.target);
+            var old = $(data.target).parent().prev().text();
+            //console.log(old);
+            var name = prompt("修改你的todo：", old);
+            if(name != null)
+                $(data.target).parent().prev().text(name);
+        }
+
+        //点击按钮，获取文本框中的文字并添加到todo
+        btn1.click(function(){
+            //获取文字并添加
+            var thing = $("#thing1").val();
+            $("#thing1").val("");
+            if(thing === ""){
+                return;
+            }
+            var addList = $("#list1");
+            var li = $("<li></li>").attr("id","every");
+            var div = $("<span></span>").addClass("every");
+            var input = $("<span></span>").text(thing);
+            addList.append(li);
+            li.append(div);
+            div.append(input);
+
+            //给每一行添加黄点
+            var dot = $("<div></div>").attr("id","chg").addClass("chg");
+            var img = $("<img>").attr("src","/img/changebutton.png").attr("width","15px").attr("height","15px");
+            dot.append(img);
+            li.append(dot);
+
+            //使文字单击时执行
+            div.click(wordClick);
+            dot.click(chg);
+        })
+
+    </script>
+</body>
+</html>
